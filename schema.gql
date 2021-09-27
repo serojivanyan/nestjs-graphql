@@ -1,0 +1,132 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  """id of the post"""
+  id: Int!
+
+  """title of the post"""
+  title: String!
+
+  """description of the post"""
+  description: String!
+}
+
+type User {
+  """id of the user"""
+  id: Int!
+
+  """email of the user"""
+  email: String!
+
+  """password of the user"""
+  password: String!
+
+  """first name of the user"""
+  firstName: String!
+
+  """last name of the user"""
+  lastName: String!
+
+  """role of the user"""
+  role: String!
+}
+
+type LoginUserResponse {
+  """id of the user"""
+  id: Int!
+
+  """token of the user"""
+  token: String!
+}
+
+type Query {
+  users: [User!]!
+  user(id: Float!): User!
+  posts: [Post!]!
+  post(id: Int!): Post!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  login(loginUserInput: LoginUserInput!): LoginUserResponse!
+  removeUser(id: Float!): User!
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  removePost(id: Int!): Post!
+}
+
+input CreateUserInput {
+  """password of the user"""
+  password: String!
+
+  """first name of the user"""
+  firstName: String!
+
+  """last name of the user"""
+  lastName: String!
+
+  """email of the user"""
+  email: String!
+
+  """role of the user"""
+  role: String!
+}
+
+input UpdateUserInput {
+  """password of the user"""
+  password: String
+
+  """first name of the user"""
+  firstName: String
+
+  """last name of the user"""
+  lastName: String
+
+  """email of the user"""
+  email: String
+
+  """role of the user"""
+  role: String
+  id: String!
+}
+
+input LoginUserInput {
+  """password of the user"""
+  password: String!
+
+  """first name of the user"""
+  firstName: String
+
+  """last name of the user"""
+  lastName: String
+  email: String!
+
+  """role of the user"""
+  role: String
+}
+
+input CreatePostInput {
+  """Post title"""
+  title: String!
+
+  """Post Description"""
+  description: String!
+
+  """Post Author"""
+  authorId: Int!
+}
+
+input UpdatePostInput {
+  """Post title"""
+  title: String
+
+  """Post Description"""
+  description: String
+
+  """Post Author"""
+  authorId: Int
+  id: Int!
+}
