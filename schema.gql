@@ -45,6 +45,7 @@ type Query {
   users: [User!]!
   user(id: Float!): User!
   posts: [Post!]!
+  findPostsByUserId(id: Float!): [Post!]!
   post(id: Int!): Post!
 }
 
@@ -114,9 +115,6 @@ input CreatePostInput {
 
   """Post Description"""
   description: String!
-
-  """Post Author"""
-  authorId: Int!
 }
 
 input UpdatePostInput {
@@ -125,8 +123,5 @@ input UpdatePostInput {
 
   """Post Description"""
   description: String
-
-  """Post Author"""
-  authorId: Int
   id: Int!
 }

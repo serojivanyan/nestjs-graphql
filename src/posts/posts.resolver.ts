@@ -17,6 +17,10 @@ export class PostsResolver {
   findAll() {
     return this.postsService.findAll();
   }
+  @Query(() => [Post], { name: 'findPostsByUserId' })
+  findPostsByUserId(@Args('id', { type: () => Number }) id: number) {
+    return this.postsService.findPostsByUserId(id);
+  }
 
   @Query(() => Post, { name: 'post' })
   findOne(@Args('id', { type: () => Int }) id: number) {
