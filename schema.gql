@@ -11,6 +11,9 @@ type Post {
 
   """description of the post"""
   description: String!
+
+  """post author id"""
+  userId: Float!
 }
 
 type User {
@@ -115,6 +118,9 @@ input CreatePostInput {
 
   """Post Description"""
   description: String!
+
+  """Post Author id"""
+  userId: Int!
 }
 
 input UpdatePostInput {
@@ -123,5 +129,8 @@ input UpdatePostInput {
 
   """Post Description"""
   description: String
+
+  """Post Author id"""
+  userId: Int
   id: Int!
 }

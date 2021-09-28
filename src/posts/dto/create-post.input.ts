@@ -6,6 +6,6 @@ export class CreatePostInput {
   title: string;
   @Field(() => String, { description: 'Post Description' })
   description: string;
-  // @Field(() => Int, { description: 'Post Author' })
-  // userId: string;
+  @Field(() => Int, { description: 'Post Author id' })
+  userId: number;
 }

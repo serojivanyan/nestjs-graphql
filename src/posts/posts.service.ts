@@ -12,11 +12,11 @@ export class PostsService {
     private readonly postRepository: Repository<Post>,
   ) {}
   async create(createPostInput: CreatePostInput) {
-    const user = 1;
-    const { title, description } = createPostInput;
+    const { title, description, userId } = createPostInput;
     const post = await this.postRepository.create({
       title,
       description,
+      userId,
     });
     return post;
   }

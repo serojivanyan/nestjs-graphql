@@ -21,7 +21,9 @@ export class Post {
   @Column()
   @Field(() => String, { description: 'description of the post' })
   description: string;
-
+  @Column()
+  @Field(() => Number, { description: 'post author id' })
+  userId: number;
 
   @ManyToOne((type) => User, (user) => user.posts, {
     onDelete: 'CASCADE',
